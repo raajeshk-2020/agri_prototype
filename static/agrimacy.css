@@ -64,9 +64,10 @@
 
 	#agrimacy_body 
 	{
-		/*background-image: url("../static/image_17.jpg");*/
-		/* background-color: beige; */
-		/*font-family: 'Noto Sans JP', sans-serif;*/
+		background-image: url("../static/agrimacy_logo.jpg"), url("../static/agrimacy_logo.jpg");
+		background-repeat: no-repeat, no-repeat;
+		background-position: -15px 150px, 1330px 150px;
+		/*font-family: 'Noto Sans JP';/*, sans-serif;*/
 	}
 
 	h3, h4
@@ -144,7 +145,8 @@
     right: 10px;
     text-align: center;
     top: 10px;
-    width: 50px
+    width: 50px;
+	font-weight: bold;
 }
 
 .prod-info-main .product-detail span.sale {
