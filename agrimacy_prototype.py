@@ -3,7 +3,7 @@ from flask import Flask, request, render_template, url_for
 import urllib.request
 import logging
 
-def get_typeahead_movies():
+def get_typeahead_products():
 	product_data = pd.read_csv("final_products_data.csv")
 	return list(product_data['Product_Name'].str.capitalize())
 
