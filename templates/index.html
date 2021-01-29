@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html>
+
+<title>Agrimacy</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />-->
+
+<!-- Customized project css -->
+<link rel="stylesheet" href="E:\General\Agrimacy_prototype\static\agrimacy.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='agrimacy.css') }}"-->
+
+<!-- Awesome fonts designs -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+<!-- Bootstrap core CSS -->
+<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+-->
+
+<!-- Autocomplete Javascript & CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
+
+<head>
+
+	<script type="text/javascript">
+
+		//window.alert("hi");
+
+		var input_suggestions = {{type_ahead_products|tojson}};
+
+		function validate_stock(event)
+		{
+			var id = event.id;
+			//alert(id);
+			
+			// Take current focus of the product
+			if (id == 'stock_1')
+			{
+				//alert('inside if');
+				document.getElementById("tractor_cart").textContent = "Out Of Stock";
+				document.getElementById("tractor_cart").style.cursor = "crosshair";
+				document.getElementById("tractor_cart").style.backgroundColor = "grey";
+				document.getElementById("tractor_cart").disabled = true;
+			}
+			else if (id == 'stock_2')
+			{
+				//alert('inside if');
+				document.getElementById("cutter_cart").textContent = "Out Of Stock";
+				document.getElementById("cutter_cart").style.cursor = "crosshair";
+				document.getElementById("cutter_cart").style.backgroundColor = "grey";
+				document.getElementById("cutter_cart").disabled = true;
+			}
+			else if (id == 'stock_3')
+			{
+				//alert('inside if');
+				document.getElementById("weeder_cart").textContent = "Out Of Stock";
+				document.getElementById("weeder_cart").style.cursor = "crosshair";
+				document.getElementById("weeder_cart").style.backgroundColor = "grey";
+				document.getElementById("weeder_cart").disabled = true;
+			}
+			else if (id == 'stock_4')
+			{
+				//alert('inside if');
+				document.getElementById("culti_cart").textContent = "Out Of Stock";
+				document.getElementById("culti_cart").style.cursor = "crosshair";
+				document.getElementById("culti_cart").style.backgroundColor = "grey";
+				document.getElementById("culti_cart").disabled = true;
+			}
+			else if (id == 'stock_5')
+			{
+				//alert('inside if');
+				document.getElementById("bore_cart").textContent = "Out Of Stock";
+				document.getElementById("bore_cart").style.cursor = "crosshair";
+				document.getElementById("bore_cart").style.backgroundColor = "grey";
+				document.getElementById("bore_cart").disabled = true;
+			}
+			else if (id == 'stock_6')
+			{
+				//alert('inside if');
+				document.getElementById("solar_cart").textContent = "Out Of Stock";
+				document.getElementById("solar_cart").style.cursor = "crosshair";
+				document.getElementById("solar_cart").style.backgroundColor = "grey";
+				document.getElementById("solar_cart").disabled = true;
+			}
+			else if (id == 'stock_7')
+			{
+				//alert('inside if');
+				document.getElementById("rain_cart").textContent = "Out Of Stock";
+				document.getElementById("rain_cart").style.cursor = "crosshair";
+				document.getElementById("rain_cart").style.backgroundColor = "grey";
+				document.getElementById("rain_cart").disabled = true;
+			}
+			else if (id == 'stock_8')
+			{
+				//alert('inside if');
+				document.getElementById("soil_cart").textContent = "Out Of Stock";
+				document.getElementById("soil_cart").style.cursor = "crosshair";
+				document.getElementById("soil_cart").style.backgroundColor = "grey";
+				document.getElementById("soil_cart").disabled = true;
+			}
+			else if (id == 'stock_9')
+			{
+				//alert('inside if');
+				document.getElementById("garden_cart").textContent = "Out Of Stock";
+				document.getElementById("garden_cart").style.cursor = "crosshair";
+				document.getElementById("garden_cart").style.backgroundColor = "grey";
+				document.getElementById("garden_cart").disabled = true;
+			}
+			else if (id == 'stock_10')
+			{
+				//alert('inside if');
+				document.getElementById("ferti_cart").textContent = "Out Of Stock";
+				document.getElementById("ferti_cart").style.cursor = "crosshair";
+				document.getElementById("ferti_cart").style.backgroundColor = "grey";
+				document.getElementById("ferti_cart").disabled = true;
+			}
+			else if (id == 'stock_11')
+			{
+				//alert('inside if');
+				document.getElementById("urea_cart").textContent = "Out Of Stock";
+				document.getElementById("urea_cart").style.cursor = "crosshair";
+				document.getElementById("urea_cart").style.backgroundColor = "grey";
+				document.getElementById("urea_cart").disabled = true;
+			}
+			else if (id == 'stock_12')
+			{
+				//alert('inside if');
+				document.getElementById("neem_cart").textContent = "Out Of Stock";
+				document.getElementById("neem_cart").style.cursor = "crosshair";
+				document.getElementById("neem_cart").style.backgroundColor = "grey";
+				document.getElementById("neem_cart").disabled = true;
+			}
+			else if (id == 'stock_13')
+			{
+				//alert('inside if');
+				document.getElementById("pesti_cart").textContent = "Out Of Stock";
+				document.getElementById("pesti_cart").style.cursor = "crosshair";
+				document.getElementById("pesti_cart").style.backgroundColor = "grey";
+				document.getElementById("pesti_cart").disabled = true;
+			}
+			else if (id == 'stock_14')
+			{
+				//alert('inside if');
+				document.getElementById("seeds_cart").textContent = "Out Of Stock";
+				document.getElementById("seeds_cart").style.cursor = "crosshair";
+				document.getElementById("seeds_cart").style.backgroundColor = "grey";
+				document.getElementById("seeds_cart").disabled = true;
+			}
+			else if (id == 'stock_back_1')
+			{
+				//alert('inside if');
+				document.getElementById("tractor_cart").textContent = "Add to cart";
+				document.getElementById("tractor_cart").style.cursor = "pointer";
+				document.getElementById("tractor_cart").style.backgroundColor = "indianred";
+				document.getElementById("tractor_cart").disabled = false;
+			}
+			else if (id == 'stock_back_2')
+			{
+				//alert('inside if');
+				document.getElementById("cutter_cart").textContent = "Add to cart";
+				document.getElementById("cutter_cart").style.cursor = "pointer";
+				document.getElementById("cutter_cart").style.backgroundColor = "indianred";
+				document.getElementById("cutter_cart").disabled = false;
+			}
+			else if (id == 'stock_back_3')
+			{
+				//alert('inside if');
+				document.getElementById("weeder_cart").textContent = "Add to cart";
+				document.getElementById("weeder_cart").style.cursor = "pointer";
+				document.getElementById("weeder_cart").style.backgroundColor = "indianred";
+				document.getElementById("weeder_cart").disabled = false;
+			}
+			else if (id == 'stock_back_4')
+			{
+				//alert('inside if');
+				document.getElementById("culti_cart").textContent = "Add to cart";
+				document.getElementById("culti_cart").style.cursor = "pointer";
+				document.getElementById("culti_cart").style.backgroundColor = "indianred";
+				document.getElementById("culti_cart").disabled = false;
+			}
+			else if (id == 'stock_back_5')
+			{
+				//alert('inside if');
+				document.getElementById("bore_cart").textContent = "Add to cart";
+				document.getElementById("bore_cart").style.cursor = "pointer";
+				document.getElementById("bore_cart").style.backgroundColor = "indianred";
+				document.getElementById("bore_cart").disabled = false;
+			}
+			else if (id == 'stock_back_6')
+			{
+				//alert('inside if');
+				document.getElementById("solar_cart").textContent = "Add to cart";
+				document.getElementById("solar_cart").style.cursor = "pointer";
+				document.getElementById("solar_cart").style.backgroundColor = "indianred";
+				document.getElementById("solar_cart").disabled = false;
+			}
+			else if (id == 'stock_back_7')
+			{
+				//alert('inside if');
+				document.getElementById("rain_cart").textContent = "Add to cart";
+				document.getElementById("rain_cart").style.cursor = "pointer";
+				document.getElementById("rain_cart").style.backgroundColor = "indianred";
+				document.getElementById("rain_cart").disabled = false;
+			}
+			else if (id == 'stock_back_8')
+			{
+				//alert('inside if');
+				document.getElementById("soil_cart").textContent = "Add to cart";
+				document.getElementById("soil_cart").style.cursor = "pointer";
+				document.getElementById("soil_cart").style.backgroundColor = "indianred";
+				document.getElementById("soil_cart").disabled = false;
+			}
+			else if (id == 'stock_back_9')
+			{
+				//alert('inside if');
+				document.getElementById("garden_cart").textContent = "Add to cart";
+				document.getElementById("garden_cart").style.cursor = "pointer";
+				document.getElementById("garden_cart").style.backgroundColor = "indianred";
+				document.getElementById("garden_cart").disabled = false;
+			}
+			else if (id == 'stock_back_10')
+			{
+				//alert('inside if');
+				document.getElementById("ferti_cart").textContent = "Add to cart";
+				document.getElementById("ferti_cart").style.cursor = "pointer";
+				document.getElementById("ferti_cart").style.backgroundColor = "indianred";
+				document.getElementById("ferti_cart").disabled = false;
+			}
+			else if (id == 'stock_back_11')
+			{
+				//alert('inside if');
+				document.getElementById("urea_cart").textContent = "Add to cart";
+				document.getElementById("urea_cart").style.cursor = "pointer";
+				document.getElementById("urea_cart").style.backgroundColor = "indianred";
+				document.getElementById("urea_cart").disabled = false;
+			}
+			else if (id == 'stock_back_12')
+			{
+				//alert('inside if');
+				document.getElementById("neem_cart").textContent = "Add to cart";
+				document.getElementById("neem_cart").style.cursor = "pointer";
+				document.getElementById("neem_cart").style.backgroundColor = "indianred";
+				document.getElementById("neem_cart").disabled = false;
+			}
+			else if (id == 'stock_back_13')
+			{
+				//alert('inside if');
+				document.getElementById("pesti_cart").textContent = "Add to cart";
+				document.getElementById("pesti_cart").style.cursor = "pointer";
+				document.getElementById("pesti_cart").style.backgroundColor = "indianred";
+				document.getElementById("pesti_cart").disabled = false;
+			}
+			else if (id == 'stock_back_14')
+			{
+				//alert('inside if');
+				document.getElementById("seeds_cart").textContent = "Add to cart";
+				document.getElementById("seeds_cart").style.cursor = "pointer";
+				document.getElementById("seeds_cart").style.backgroundColor = "indianred";
+				document.getElementById("seeds_cart").disabled = false;
+			}
+			else
+			{
+				var a = "pass";
+			}
+		}
+
+	</script>
+
+</head>
+
+<body id="agrimacy_body">
+
+	<!-- Header -->
+	<div class="agrimacy-div" align=center>
+		<h3> AGRIMACY </h3>
+		<h4> Onestop for all AgriRetailing </h4>
+	</div>
+
+	<!-- Setup the basic Menu for the site -->
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#" style="font-weight:bold;color:Blue;">Agrimacy</a>
+		</div>
+		<ul class="nav navbar-nav" style="font-weight:bold;">
+		  <li><a href="#" style="font-weight:bold;color:Chocolate;">My Account</a></li>
+		  <li><a href="#">Home</a></li>
+		  <li class="active"><a href="#">Products</a></li>
+		  <li><a href="#">Services</a></li>
+		  <li><a href="#">Careers</a></li>
+		  <li><a href="#">Contact Us</a></li>
+		</ul>
+	  </div>
+	</nav>
+  
+		<div class="container p-4" style="margin-top: 30px;text-align: center;color: white;">
+
+			<div class="form-group shadow-textarea">
+				<input type="text" class="agrimacy form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Product Name" style="background-color:bisque; text-align:left; color:black; border-color:black; width:100%;" required>
+			</div>
+	 
+			</br>
+			
+			<div class="d-print-inline-flex border-top border-bottom pt-1 text-center mb-10">
+			<!--<div class="form-control">-->
+				<center>
+					<!--<button type="reset" id="Clear" class="btn btn-danger btn-md btn-rounded Clear">Reset</button>-->
+					<button type="submit" id="Search" class="btn btn-danger btn-md btn-rounded Search">Search</button>
+				</center>
+			</div>
+			
+			<hr style="height:5px; color:silver;">
+		</div>
+
+	<!-- Products Listing -->
+	
+	<div class="container">
+	<div class="col-xs-12 col-md-6">
+		<!-- First product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\tractor.jpg" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='tractor.jpg') }}" alt="tractor" class="img-responsive rotprod"> 
+							<span class="tag2 hot" style="color:red;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								HOT
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+								Multi-use Tractor (TRAC01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 49999</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>Used for pushing agricultural machinery, for plowing, tilling, disking, harrowing, planting, and similar tasks </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_1" class="stock_1" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_1" class="stock_back_1" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="tractor_cart" class="btn btn-danger"><span>Add to cart</span></a>
+								<a href="javascript:void(0);" class="btn btn-info"><span>More info</span></a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<!-- Second product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\crop_cutter.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='crop_cutter.jpg') }}" alt="crop_cutter" class="img-responsive rotprod"> 
+							<span class="tag2 hot" style="color:red;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								HOT
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Agri Crop Cutter (CUTR01) 
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 19990</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>used for cutting variety of crops and helps the small scale farmers with the cost effective technology. ... The present designed and fabricated crop cutter can be used to cut the straws of different food grain crops like Paddy, wheat and also grass </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_2" class="stock_2" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_2" class="stock_back_2" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="cutter_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+	<!-- Third product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\crop_weeder.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='crop_weeder.jpg') }}" alt="crop_weeder" class="img-responsive rotprod"> 
+							<span class="tag3 special" style="color:green;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								SPECIAL
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Agri Crop Weeder (WEEDR01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 9450</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>used for removing weeds in vegetable gardens, basins of orchard trees and Vineyard plantations. It is also used for breaking the soil crust and creation of soil mulch. Features: The wheel hand hoe is a widely accepted weeding tool for doing weeding and interculture in row crops </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_3" class="stock_3" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_3" class="stock_back_3" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="weeder_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<!-- Fourth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\cultivator.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='cultivator.jpg') }}" alt="cultivator" class="img-responsive rotprod"> 
+							<span class="tag2 sale" style="color:darkblue;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								SALE
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Agri Cultivator (CULTIV01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 39999</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>to prepare a proper seedbed for the crop to be planted into, to bury crop residue in the soil (helping to warm the soil before planting), to control weeds, and to mix and incorporate the soil to ensure the growing crop has enough water and nutrients to grow well </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_4" class="stock_4" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_4" class="stock_back_4" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="culti_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<!-- Fifth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\borewell_pump.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='borewell_pump.jpg') }}" alt="borewell" class="img-responsive rotprod"> 
+							<span class="tag2 sale" style="color:darkblue;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								SALE
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Borewell Pump (BOREP01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 29999</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>used to pump water supply from deep borewells. All liquids can be pumped using centrifugal water pumps, even liquid with low viscosity. These pumps work great with thin liquids and high flow rates </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_5" class="stock_5" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_5" class="stock_back_5" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="bore_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<!-- Sixth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\solar_pump.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='solar_pump.jpg') }}" alt="solar" class="img-responsive rotprod"> 
+							<span class="tag2 sale" style="color:darkblue;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								SALE
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Solar Pump (SOLARP01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 24999</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>used to irrigate crops, water livestock or provide potable drinking water. A solar water pump system is essentially an electrical pump system in which the electricity is provided by one or several PhotoVoltaic (PV) panels </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_6" class="stock_6" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_6" class="stock_back_6" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="solar_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<!-- Seventh product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\rain_pipe.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='rain_pipe.jpg') }}" alt="rain" class="img-responsive rotprod"> 
+							<span class="tag2 sale" style="color:darkblue;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								SALE
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Rain Pipe (RAINP01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 6999</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>for sprinkler irrigation which sprays same quality of water to crops. It helps to reduce consumption of energy & water more than 50% </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_7" class="stock_7" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_7" class="stock_back_7" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="rain_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<!-- Eighth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\soil_analysis_kit.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='soila_analysis_kit.jpg') }}" alt="soil_analysis" class="img-responsive rotprod"> 
+							<span class="tag2 sale" style="color:darkblue;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								SALE
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Soil Analysis Kit (SOILAK01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 12999</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>to measure pH and the most important elements for plant growth: nitrogen (N), phosphorus (P), and potassium (K) </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_8" class="stock_8" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_8" class="stock_back_8" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="soil_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<!-- Nineth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\gardening_toolkit.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='gardening_toolkit.jpg') }}" alt="garden" class="img-responsive rotprod"> 
+							<span class="tag2 sale" style="color:darkblue;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								SALE
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Gardening Tool Kit (GARDTK01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 7999</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>Hand Trowel. A hand trowel is a small tool that is essential for planting, transplanting and potting. ...Secateurs. Also known as a pruning shears, pruners or clippers, a garden secateurs is a very useful hand tool around the garden. ... </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_9" class="stock_9" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_9" class="stock_back_9" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="garden_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+	<!-- Tenth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\fertilizer.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='fertilizer.jpg') }}" alt="fertilizer" class="img-responsive rotprod"> 
+							<span class="tag3 special" style="color:green;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								SPECIAL
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Top selling Agrimacy Sponsored Fertilizer 1L (FERT01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 599</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>to increase their productivity. These are used by the farmers daily to increase the crop yield. The fertilizers contain the essential nutrients required by the plants, including nitrogen, potassium, and phosphorus. </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_10" class="stock_10" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_10" class="stock_back_10" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="ferti_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+	<!-- Eleventh product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\urea.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='urea.jpg') }}" alt="urea" class="img-responsive rotprod"> 
+							<span class="tag3 special" style="color:green;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								SPECIAL
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Top selling Agrimacy Sponsored Urea 1KG (UREA01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 999</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>to provide the plants with nitrogen to promote green leafy growth and make the plants look lush. Urea also aids the photosynthesis process of plants </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_11" class="stock_11" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_11" class="stock_back_11" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="urea_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+	<!-- Twelveth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\neemoil.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='neemoil.jpg') }}" alt="neemoil" class="img-responsive rotprod"> 
+							<span class="tag3 top" style="color:magenta;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								TOP SELLING
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Top selling Agrimacy Sponsored Neem Oil 1L (UREA01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 399</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>dual purpose in the vegetable garden as both a pesticide and a fungicide. It works on arthropod pests that often eat your vegetables, including tomato hornworms, corn earworm, aphids and whiteflies. In addition, neem oil also controls common fungi that grow on vegetable plants, including: Mildews </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_12" class="stock_12" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_12" class="stock_back_12" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="neem_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+	<!-- Thirteenth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\pesticide.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='pesticide.jpg') }}" alt="pesticide" class="img-responsive rotprod"> 
+							<span class="tag3 top" style="color:magenta;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								TOP SELLING
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Top selling Agrimacy Sponsored Pesticide 1L (UREA01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 1299</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>Protecting plants or plant products against all harmful organisms (e.g. fungicides, insecticides, molluscicides, nematicides, rodenticides). ... Checking or preventing undesired growth of plants (e.g. herbicides) </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_13" class="stock_13" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_13" class="stock_back_13" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="pesti_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+	<!-- Fourteenth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\seeds.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='seeds.jpg') }}" alt="seeds" class="img-responsive rotprod"> 
+							<span class="tag3 top" style="color:magenta;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								TOP SELLING
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									Top selling Agrimacy Sponsored Seeds Mix - 1KG (UREA01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 299</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p> to crop productivity and food security </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_14" class="stock_14" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_14" class="stock_back_14" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="seeds_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+	</div>
+
+	<br style = "line-height:100px;"> 
+
+	<div class="container-fluid">
+		<div class="navbar fixed-bottom position-relative">
+	
+			<footer class="contact-footer">
+		<!--		Get Connected with me on social networks!
+					<a target="_blank" href="https://github.com/raajeshk-2020/hotel_reservation_prediction"><i class="fa fa-github" style="font-size:20px;color:red"></i></a>
+					<a target="_blank" href="https://www.linkedin.com/in/rajeshkannan-it/"><i class="fa fa-linkedin" style="font-size:20px;color:black"></i></a>
+					<a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook-official" style="font-size:20px;color:black"></i></a>
+					<a target="_blank" href="https://www.twitter.com/"><i class="fa fa-twitter" style="font-size:20px;color:black"></i></a>
+		-->
+			<!-- Social buttons -->
+				<div class="primary-color btn-danger">
+					<div class="container">
+						<!--Grid row-->
+						<div class="row py-0.6 d-flex align-items-center">
+
+							<!--Grid column-->
+							<div class="col-md-3 col-lg-5 text-left text-md-left mb-3 mb-md-0">
+								<h6 class="mb-0 white-text" style="font-size:20px;">Get connected with me on social networks!</h6>
+							</div>
+							<!--Grid column-->
+
+							<!--Grid column-->
+							<div class="col-md-7 col-lg-7 text-left text-md-left" style="align:center;">
+								<!--Github-->
+								<a target="_blank" class="gh-ic ml-0" href="https://github.com/raajeshk-2020/" >
+									<i class="fa fa-github white-text mr-3" style="color:white"> </i>
+								</a>
+								<!--Facebook-->
+								<a target="_blank" class="fb-ic ml-0" href="https://www.facebook.com/" >
+									<i class="fa fa-facebook white-text mr-3" style="color:white"> </i>
+								</a>
+								<!--Twitter-->
+								<a target="_blank" class="tw-ic" href="https://www.twitter.com/">
+									<i class="fa fa-twitter white-text mr-3" style="color:white"> </i>
+								</a>
+								<!--Youtube-->
+								<a target="_blank" class="gplus-ic" href="https://www.youtube.com/">
+									<i class="fa fa-youtube white-text mr-3" style="color:white"> </i>
+								</a>
+								<!--Linkedin-->
+								<a target="_blank" class="li-ic" href="https://www.linkedin.com/in/rajeshkannan-it/" >
+									<i class="fa fa-linkedin white-text mr-3" style="color:white"> </i>
+								</a>
+								<!--Instagram-->
+								<a target="_blank" class="ins-ic" href="https://www.instagram.com/">
+									<i class="fa fa-instagram white-text mr-lg-3" style="color:white"> </i>
+								</a>
+							</div>
+							<!--Grid column-->
+
+						</div>
+						<!--Grid row-->
+					</div>
+				</div>
+				<!-- Social buttons -->
+			</footer>
+
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+	<script type="text/javascript" src="E:\General\Agrimacy_prototype\static\autocomplete.js"></script>
+	<script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
+
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+  
+</body>
+
+</html>
+	
