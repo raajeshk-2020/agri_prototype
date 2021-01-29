@@ -57,6 +57,11 @@
 				100% {background-color: grey;}
 			}
 
+    #autoComplete 
+    {
+		background-position: 97%;
+    }
+
 	#agrimacy_body 
 	{
 		/*background-image: url("../static/image_17.jpg");*/
