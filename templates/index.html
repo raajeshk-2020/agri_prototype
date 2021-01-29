@@ -159,6 +159,39 @@
 				document.getElementById("seeds_cart").style.backgroundColor = "grey";
 				document.getElementById("seeds_cart").disabled = true;
 			}
+			else if (id == 'stock_15')
+			{
+				//alert('inside if');
+				document.getElementById("livestock_cart").textContent = "Out Of Stock";
+				document.getElementById("livestock_cart").style.cursor = "crosshair";
+				document.getElementById("livestock_cart").style.backgroundColor = "grey";
+				document.getElementById("livestock_cart").disabled = true;
+			}
+			else if (id == 'stock_16')
+			{
+				//alert('inside if');
+				document.getElementById("selfdrive_cart").textContent = "Out Of Stock";
+				document.getElementById("selfdrive_cart").style.cursor = "crosshair";
+				document.getElementById("selfdrive_cart").style.backgroundColor = "grey";
+				document.getElementById("selfdrive_cart").disabled = true;
+			}
+			else if (id == 'stock_17')
+			{
+				//alert('inside if');
+				document.getElementById("drones_cart").textContent = "Out Of Stock";
+				document.getElementById("drones_cart").style.cursor = "crosshair";
+				document.getElementById("drones_cart").style.backgroundColor = "grey";
+				document.getElementById("drones_cart").disabled = true;
+			}
+			else if (id == 'stock_18')
+			{
+				//alert('inside if');
+				document.getElementById("greenhouse_cart").textContent = "Out Of Stock";
+				document.getElementById("greenhouse_cart").style.cursor = "crosshair";
+				document.getElementById("greenhouse_cart").style.backgroundColor = "grey";
+				document.getElementById("greenhouse_cart").disabled = true;
+			}
+
 			else if (id == 'stock_back_1')
 			{
 				//alert('inside if');
@@ -271,6 +304,39 @@
 				document.getElementById("seeds_cart").style.backgroundColor = "indianred";
 				document.getElementById("seeds_cart").disabled = false;
 			}
+			else if (id == 'stock_back_15')
+			{
+				//alert('inside if');
+				document.getElementById("livestock_cart").textContent = "Add to cart";
+				document.getElementById("livestock_cart").style.cursor = "pointer";
+				document.getElementById("livestock_cart").style.backgroundColor = "indianred";
+				document.getElementById("livestock_cart").disabled = false;
+			}
+			else if (id == 'stock_back_16')
+			{
+				//alert('inside if');
+				document.getElementById("selfdrive_cart").textContent = "Add to cart";
+				document.getElementById("selfdrive_cart").style.cursor = "pointer";
+				document.getElementById("selfdrive_cart").style.backgroundColor = "indianred";
+				document.getElementById("selfdrive_cart").disabled = false;
+			}
+			else if (id == 'stock_back_17')
+			{
+				//alert('inside if');
+				document.getElementById("drones_cart").textContent = "Add to cart";
+				document.getElementById("drones_cart").style.cursor = "pointer";
+				document.getElementById("drones_cart").style.backgroundColor = "indianred";
+				document.getElementById("drones_cart").disabled = false;
+			}
+			else if (id == 'stock_back_18')
+			{
+				//alert('inside if');
+				document.getElementById("greenhouse_cart").textContent = "Add to cart";
+				document.getElementById("greenhouse_cart").style.cursor = "pointer";
+				document.getElementById("greenhouse_cart").style.backgroundColor = "indianred";
+				document.getElementById("greenhouse_cart").disabled = false;
+			}
+
 			else
 			{
 				var a = "pass";
@@ -369,6 +435,240 @@
 							<div class="col-md-12"> 
 								<a href="javascript:void(0);" id="tractor_cart" class="btn btn-danger"><span>Add to cart</span></a>
 								<a href="javascript:void(0);" class="btn btn-info"><span>More info</span></a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<!-- Fifteenth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\livestock_sensors.jpg" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='livestock_sensors.jpg') }}" alt="livestock" class="img-responsive rotprod"> 
+							<span class="tag2 hot" style="color:red;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								HOT
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+								IoT driven Livestock Sensor (IOTLIVE01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 999</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>Connected sensors in livestock wearables enable farmers to monitor heart rate, blood pressure, respiratory rate, temperature, digestion and other vitals around the clock </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_15" class="stock_15" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_15" class="stock_back_15" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="livestock_cart" class="btn btn-danger"><span>Add to cart</span></a>
+								<a href="javascript:void(0);" class="btn btn-info"><span>More info</span></a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+		<!-- Sixteenth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\self_driving_tractor.jpg" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='self_driving_tractor.jpg') }}" alt="self_driving_tractor" class="img-responsive rotprod"> 
+							<span class="tag2 hot" style="color:red;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								HOT
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+								IoT driven Self Driving Tractor (IOTSELF01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 79999</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>The tractors use GPS and other wireless technologies to farm land without the need of a driver. They operate simply with the aid of a supervisor monitoring the progress at a control station or with a manned tractor in lead </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_16" class="stock_16" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_16" class="stock_back_16" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="selfdrive_cart" class="btn btn-danger"><span>Add to cart</span></a>
+								<a href="javascript:void(0);" class="btn btn-info"><span>More info</span></a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+	<!-- Seventeenth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\agri_drones.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='agri_drones.jpg') }}" alt="agri_drones" class="img-responsive rotprod"> 
+							<span class="tag3 special" style="color:green;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								SPECIAL
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									IoT driven Agri Drone (IOTDRONE01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 15550</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>unmanned aerial vehicle used to help optimize agriculture operations, increase crop production, and monitor crop growth. Sensors and digital imaging capabilities can give farmers a richer picture of their fields </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_17" class="stock_17" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_17" class="stock_back_17" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="drones_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
+							</div>
+							<div class="col-md-12">
+								<div class="rating">Rating:
+									<label for="stars-rating-5"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-4"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-3"><i class="fa fa-star text-danger"></i></label>
+									<label for="stars-rating-2"><i class="fa fa-star text-warning"></i></label>
+									<label for="stars-rating-1"><i class="fa fa-star text-warning"></i></label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end product -->
+	</div>
+
+	<div class="col-xs-12 col-md-6">
+	<!-- Eighteenth product box start here-->
+		<div class="prod-info-main prod-wrap clearfix">
+			<div class="row">
+					<div class="col-md-5 col-sm-12 col-xs-12">
+						<div class="product-image"> 
+							<img src="E:\General\Agrimacy_prototype\static\greenhouse_sensor.jpg" alt="194x228" class="img-responsive rotprod"> 
+							<img src="{{ url_for('static', filename='greenhouse_sensor.jpg') }}" alt="greenhouse_sensor" class="img-responsive rotprod"> 
+							<span class="tag3 special" style="color:green;font-weight:bold;text-decoration:blink;background-color:yellow;">
+								SPECIAL
+							</span> 
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12 col-xs-12">
+					<div class="product-detail">
+							<h5 class="name">
+								<a href="#" style="color:darkblue; font-size:22px;">
+									IoT driven Greenhouse Sensor (IOTGREEN01)
+								</a>
+							</h5>
+							<p class="price-container" style="font-weight:bold">
+								<span>&#8377; 4999</span>
+							</p>
+							<span class="tag1"></span> 
+					</div>
+					<div class="description">
+						<p>used for the following: Moisture detection - Sensors placed in the soil will measure moisture content. Equipment monitoring - Sensors placed on misting and irrigation systems will monitor the performance of pumps and pressure lines </p>
+					</div>
+
+					<div id="stock_update" style="font-weight:bold; margin-left:5%; align:center;">
+						<button type="button" id="stock_18" class="stock_18" onclick="validate_stock(this);">Stock Unavailable? &#128557;</button>
+						<button type="button" id="stock_back_18" class="stock_back_18" onclick="validate_stock(this);">Stock is Back &#128526;</button>
+					</div>
+					</br>
+
+					<div class="product-info smart-form">
+						<div class="row">
+							<div class="col-md-12"> 
+								<a href="javascript:void(0);" id="greenhouse_cart" class="btn btn-danger">Add to cart</a>
+								<a href="javascript:void(0);" class="btn btn-info">More info</a>
 							</div>
 							<div class="col-md-12">
 								<div class="rating">Rating:
@@ -1217,4 +1517,3 @@
 </body>
 
 </html>
-	
